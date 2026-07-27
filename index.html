@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Anniversary!</title>
   <style>
+    /* Turquoise Theme */
     body {
       font-family: 'Comic Sans MS', 'Chalkboard SE', 'Segoe UI', sans-serif;
       background-color: #e0f7fa;
@@ -33,6 +34,7 @@
       margin-bottom: 15px;
     }
 
+    /* Button */
     .open-btn {
       background-color: #00acc1;
       color: white;
@@ -91,24 +93,62 @@
       margin-bottom: 12px;
     }
 
-    .flowers-container {
-      margin-top: 20px;
-      text-align: center;
+    /* Polaroid Photos Gallery */
+    .polaroid-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin-top: 30px;
+      align-items: center;
     }
 
-    .flowers-container img {
+    .polaroid {
+      background: #ffffff;
+      padding: 12px 12px 25px 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      border: 1px solid #ddd;
+      width: 85%;
+      position: relative;
+      transition: transform 0.2s;
+    }
+
+    /* Slight tilt effect for realistic look */
+    .polaroid:nth-child(1) {
+      transform: rotate(-3deg);
+    }
+
+    .polaroid:nth-child(2) {
+      transform: rotate(3deg);
+    }
+
+    .polaroid:hover {
+      transform: scale(1.03) rotate(0deg);
+    }
+
+    .polaroid img {
       width: 100%;
-      max-width: 280px;
-      height: auto;
-      border-radius: 12px;
-      border: 2px solid #00838f;
+      height: 220px;
+      object-fit: cover;
+      display: block;
     }
 
-    .flower-caption {
-      font-size: 14px;
-      color: #00838f;
-      font-weight: bold;
-      margin-top: 8px;
+    .polaroid-caption {
+      font-size: 13px;
+      color: #555;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    /* Cute Washi Tape at top of polaroids */
+    .polaroid::after {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: 35%;
+      width: 30%;
+      height: 20px;
+      background-color: rgba(0, 172, 193, 0.4);
+      transform: rotate(-2deg);
     }
   </style>
 </head>
@@ -131,9 +171,18 @@
           <p>Sleep well my baby!</p>
         </div>
 
-        <div class="flowers-container">
-          <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=800&auto=format&fit=crop" alt="Bouquet of Lilies">
-          <div class="flower-caption">A bouquet of lilies for you! 💐</div>
+        <div class="polaroid-gallery">
+          
+          <div class="polaroid">
+            <img src="photo1.jpg" alt="Us Memory 1">
+            <div class="polaroid-caption">Us ❤️</div>
+          </div>
+
+          <div class="polaroid">
+            <img src="photo2.jpg" alt="Us Memory 2">
+            <div class="polaroid-caption">Favorite 📸</div>
+          </div>
+
         </div>
       </div>
     </div>
