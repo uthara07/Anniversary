@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Anniversary!</title>
   <style>
+    /* Turquoise Theme Colors */
     body {
       font-family: 'Comic Sans MS', 'Chalkboard SE', 'Segoe UI', sans-serif;
-      background-color: #fcf6bd;
+      background-color: #e0f7fa; /* Light pastel turquoise */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -28,27 +29,28 @@
     }
 
     h1 {
-      color: #d90429;
+      color: #00838f; /* Deep turquoise header */
       font-size: 26px;
       margin-bottom: 15px;
     }
 
+    /* Turquoise Button */
     .open-btn {
-      background-color: #d90429;
+      background-color: #00acc1;
       color: white;
-      border: 3px solid #000;
+      border: 3px solid #004d40;
       padding: 12px 28px;
       font-size: 18px;
       font-weight: bold;
       border-radius: 30px;
       cursor: pointer;
-      box-shadow: 4px 4px 0px #000;
+      box-shadow: 4px 4px 0px #004d40;
       transition: transform 0.1s, box-shadow 0.1s;
     }
 
     .open-btn:hover {
       transform: translate(-2px, -2px);
-      box-shadow: 6px 6px 0px #000;
+      box-shadow: 6px 6px 0px #004d40;
     }
 
     .envelope-wrapper {
@@ -57,11 +59,11 @@
     }
 
     .envelope {
-      background: #fff;
-      border: 3px solid #000;
+      background: #ffffff;
+      border: 3px solid #00838f;
       border-radius: 12px;
       padding: 25px;
-      box-shadow: 6px 6px 0px rgba(0,0,0,0.15);
+      box-shadow: 6px 6px 0px rgba(0,131,143,0.2);
       position: relative;
     }
 
@@ -72,18 +74,18 @@
       top: -15px;
       left: 50%;
       transform: translateX(-50%);
-      background: #fcf6bd;
+      background: #e0f7fa;
       padding: 0 5px;
     }
 
     .letter {
       text-align: left;
-      color: #2b2d42;
+      color: #004d40;
       line-height: 1.7;
       font-size: 15px;
-      background: #fffdf0;
+      background: #f2fbfb;
       padding: 20px;
-      border: 2px dashed #d90429;
+      border: 2px dashed #00acc1;
       border-radius: 8px;
     }
 
@@ -91,17 +93,22 @@
       margin-bottom: 12px;
     }
 
-    .photo-gallery {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+    /* Lily Bouquet Section */
+    .flowers-container {
       margin-top: 20px;
+      text-align: center;
     }
 
-    .photo-gallery img {
-      width: 100%;
-      border-radius: 10px;
-      border: 2px solid #000;
+    .flowers-container img {
+      width: 180px;
+      height: auto;
+    }
+
+    .flower-caption {
+      font-size: 14px;
+      color: #00838f;
+      font-weight: bold;
+      margin-top: 5px;
     }
   </style>
 </head>
@@ -124,16 +131,15 @@
           <p>Sleep well my baby!</p>
         </div>
 
-        <div class="photo-gallery">
-          <img src="https://via.placeholder.com/400x300" alt="Our Memory 1">
-          <img src="https://via.placeholder.com/400x300" alt="Our Memory 2">
+        <div class="flowers-container">
+          <img src="https://cdn-icons-png.flaticon.com/512/3468/3468306.png" alt="Bouquet of Lilies">
+          <div class="flower-caption">A bouquet of lilies for you! 💐</div>
         </div>
       </div>
     </div>
   </div>
 
   <script>
-    // Event listener handles the click action cleanly
     document.getElementById('myButton').addEventListener('click', function() {
       this.style.display = 'none';
       document.getElementById('envelope').style.display = 'block';
