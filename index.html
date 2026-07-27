@@ -115,3 +115,77 @@
       left: 25%;
       width: 50%;
       height: 16px;
+      background-color: rgba(0, 172, 193, 0.6);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      z-index: 2;
+    }
+
+    .photo-card:nth-child(1)::before {
+      transform: rotate(-3deg);
+    }
+
+    .photo-card:nth-child(2)::before {
+      transform: rotate(2deg);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 155px;
+      border-radius: 8px;
+      border: 2px solid #00838f;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Uncropped further from the top of Photo 1 */
+    .photo-card.photo-1 img {
+      object-position: center 10%;
+    }
+
+    /* Uncropped further from the bottom of Photo 2 */
+    .photo-card.photo-2 img {
+      object-position: center 90%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="snoopy-header">
+      <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Snoopy_Peanuts.png" alt="Snoopy">
+    </div>
+
+    <h1>Happy Anniversary! ❤️</h1>
+
+    <button id="myButton" class="open-btn">click for message 💌</button>
+
+    <div class="envelope-wrapper" id="envelope">
+      <div class="envelope">
+        <div class="letter">
+          <p>To my baby,</p>
+          <p>Happy Anniversary! I hope we get to share more memories together. Thanks for always being there for me and caring about me. I love cuddling with you and falling asleep to your voice, especially when you tell me stories. I can't wait for the day we get to go out on more dates and you get your chappati. Hope you take care of yourself and I can make you happy.</p>
+          <p>Sleep well my baby!</p>
+        </div>
+
+        <div class="photo-gallery">
+          <div class="photo-card photo-1">
+            <img src="photo1.jpg" alt="Photo 1">
+          </div>
+          <div class="photo-card photo-2">
+            <img src="photo2.jpg" alt="Photo 2">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('myButton').addEventListener('click', function() {
+      this.style.display = 'none';
+      document.getElementById('envelope').style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
