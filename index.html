@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Anniversary!</title>
+  <style>
+    /* Styling the overall page */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffe6e8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* The main container card */
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    h1 {
+      color: #ff4b6e;
+      margin-bottom: 10px;
+    }
+
+    /* The interactive button */
+    .open-btn {
+      background-color: #ff4b6e;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.2s;
+      margin-top: 15px;
+    }
+
+    .open-btn:hover {
+      background-color: #e03a5b;
+      transform: scale(1.05);
+    }
+
+    /* Hidden content container */
+    #secret-content {
+      display: none; /* Keeps it hidden until clicked */
+      margin-top: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .message {
+      color: #555;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    /* Styling the photos */
+    .photo-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .photo-gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Smooth fade-in effect when revealed */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Happy Anniversary! ❤️</h1>
+    <p>I made something small for you...</p>
+    
+    <button class="open-btn" onclick="revealSurprise()">Click to Open 💌</button>
+
+    <div id="secret-content">
+      <div class="message">
+        <p><strong>Dearest [Name],</strong></p>
+        <p>Write your heart out here! Thank him for the memories, mention an inside joke, or write about your favorite moments together over the past year.</p>
+      </div>
+
+      <div class="photo-gallery">
+        <img src="https://via.placeholder.com/400x300" alt="Our Memory 1">
+        <img src="https://via.placeholder.com/400x300" alt="Our Memory 2">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function revealSurprise() {
+      // Find the hidden content div
+      const content = document.getElementById('secret-content');
+      // Find the button
+      const button = document.querySelector('.open-btn');
+
+      // Reveal the hidden content
+      content.style.display = 'block';
+      
+      // Hide the button after clicking
+      button.style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
