@@ -112,7 +112,6 @@
       transition: transform 0.2s;
     }
 
-    /* Slight tilt effect for realistic look */
     .polaroid:nth-child(1) {
       transform: rotate(-3deg);
     }
@@ -125,11 +124,14 @@
       transform: scale(1.03) rotate(0deg);
     }
 
+    /* Updated Image Fit (Shows Full Uncropped Picture) */
     .polaroid img {
       width: 100%;
-      height: 220px;
-      object-fit: cover;
+      height: auto;
+      max-height: 300px;
+      object-fit: contain;
       display: block;
+      border-radius: 4px;
     }
 
     .polaroid-caption {
@@ -139,7 +141,6 @@
       font-style: italic;
     }
 
-    /* Cute Washi Tape at top of polaroids */
     .polaroid::after {
       content: '';
       position: absolute;
@@ -174,13 +175,13 @@
         <div class="polaroid-gallery">
           
           <div class="polaroid">
-            <img src="photo1.jpg" alt="Uta&Ken😛">
-            <div class="polaroid-caption">Uta&Ken😛</div>
+            <img src="photo1.jpg" alt="Uta&ken">
+            <div class="polaroid-caption">Us ❤️</div>
           </div>
 
           <div class="polaroid">
-            <img src="photo2.jpg" alt="Uta&Ken😛">
-            <div class="polaroid-caption">Uta&Ken😛</div>
+            <img src="photo2.jpg" alt="Uta&ken">
+            <div class="polaroid-caption">Uta&ken</div>
           </div>
 
         </div>
@@ -194,6 +195,3 @@
       document.getElementById('envelope').style.display = 'block';
     });
   </script>
-
-</body>
-</html>
