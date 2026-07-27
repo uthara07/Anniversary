@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Anniversary!</title>
   <style>
+    /* Turquoise Theme */
     body {
       font-family: 'Comic Sans MS', 'Chalkboard SE', 'Segoe UI', sans-serif;
       background-color: #e0f7fa;
@@ -33,6 +34,7 @@
       margin-bottom: 15px;
     }
 
+    /* Button */
     .open-btn {
       background-color: #00acc1;
       color: white;
@@ -91,20 +93,60 @@
       margin-bottom: 12px;
     }
 
+    /* Side-by-side Photo Layout */
     .photo-gallery {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      justify-content: center;
       gap: 15px;
-      margin-top: 20px;
+      margin-top: 25px;
     }
 
-    .photo-gallery img {
+    .photo-card {
+      position: relative;
+      width: 46%;
+    }
+
+    /* Turquoise Washi Tape sticking pictures to letter */
+    .photo-card::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 25%;
+      width: 50%;
+      height: 16px;
+      background-color: rgba(0, 172, 193, 0.6);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      z-index: 2;
+    }
+
+    .photo-card:nth-child(1)::before {
+      transform: rotate(-3deg);
+    }
+
+    .photo-card:nth-child(2)::before {
+      transform: rotate(2deg);
+    }
+
+    .photo-card img {
       width: 100%;
-      height: auto;
-      border-radius: 10px;
+      height: 140px;
+      border-radius: 8px;
       border: 2px solid #00838f;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       display: block;
+    }
+
+    /* Crops top of Photo 1 */
+    .photo-card.crop-top img {
+      object-fit: cover;
+      object-position: bottom;
+    }
+
+    /* Fits Photo 2 cleanly */
+    .photo-card.fit img {
+      object-fit: cover;
+      object-position: center;
     }
   </style>
 </head>
@@ -128,8 +170,12 @@
         </div>
 
         <div class="photo-gallery">
-          <img src="photo1.jpg" alt="Photo 1">
-          <img src="photo2.jpg" alt="Photo 2">
+          <div class="photo-card crop-top">
+            <img src="photo1.jpg" alt="Photo 1">
+          </div>
+          <div class="photo-card fit">
+            <img src="photo2.jpg" alt="Photo 2">
+          </div>
         </div>
       </div>
     </div>
