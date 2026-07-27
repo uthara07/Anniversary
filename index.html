@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Anniversary!</title>
   <style>
-    /* Turquoise Theme Colors */
+    /* Turquoise Theme */
     body {
       font-family: 'Comic Sans MS', 'Chalkboard SE', 'Segoe UI', sans-serif;
-      background-color: #e0f7fa; /* Light pastel turquoise */
+      background-color: #e0f7fa;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -29,12 +29,12 @@
     }
 
     h1 {
-      color: #00838f; /* Deep turquoise header */
+      color: #00838f;
       font-size: 26px;
       margin-bottom: 15px;
     }
 
-    /* Turquoise Button */
+    /* Button */
     .open-btn {
       background-color: #00acc1;
       color: white;
@@ -93,58 +93,20 @@
       margin-bottom: 12px;
     }
 
-    /* Lily Bouquet Section */
+    /* Real Lily Bouquet Photo */
     .flowers-container {
       margin-top: 20px;
       text-align: center;
     }
 
     .flowers-container img {
-      width: 180px;
+      width: 100%;
+      max-width: 280px;
       height: auto;
+      border-radius: 12px;
+      border: 2px solid #00838f;
     }
 
     .flower-caption {
       font-size: 14px;
-      color: #00838f;
-      font-weight: bold;
-      margin-top: 5px;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <div class="snoopy-header">
-      <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Snoopy_Peanuts.png" alt="Snoopy">
-    </div>
-
-    <h1>Happy Anniversary! ❤️</h1>
-
-    <button id="myButton" class="open-btn">click for message 💌</button>
-
-    <div class="envelope-wrapper" id="envelope">
-      <div class="envelope">
-        <div class="letter">
-          <p>To my baby,</p>
-          <p>Happy Anniversary! I hope we get to share more memories together. Thanks for always being there for me and caring about me. I love cuddling with you and falling asleep to your voice, especially when you tell me stories. I can't wait for the day we get to go out on more dates and you get your chappati. Hope you take care of yourself and I can make you happy.</p>
-          <p>Sleep well my baby!</p>
-        </div>
-
-        <div class="flowers-container">
-          <img src="https://cdn-icons-png.flaticon.com/512/3468/3468306.png" alt="Bouquet of Lilies">
-          <div class="flower-caption">A bouquet of lilies for you! 💐</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    document.getElementById('myButton').addEventListener('click', function() {
-      this.style.display = 'none';
-      document.getElementById('envelope').style.display = 'block';
-    });
-  </script>
-
-</body>
-</html>
+      color: #00
