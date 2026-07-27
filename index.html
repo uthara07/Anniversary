@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Anniversary!</title>
   <style>
-    /* Styling the overall page */
+    /* Snoopy Theme Colors: Soft yellow, white, and red */
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #ffe6e8;
+      font-family: 'Comic Sans MS', 'Chalkboard SE', 'Segoe UI', sans-serif;
+      background-color: #fcf6bd; /* Snoopy-esque soft pastel yellow */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -17,55 +17,94 @@
       padding: 20px;
     }
 
-    /* The main container card */
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    .container {
       text-align: center;
-      max-width: 400px;
+      max-width: 450px;
       width: 100%;
     }
 
-    h1 {
-      color: #ff4b6e;
+    .snoopy-header img {
+      width: 140px;
       margin-bottom: 10px;
     }
 
-    /* The interactive button */
+    h1 {
+      color: #d90429;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    /* "Click for message" Button */
     .open-btn {
-      background-color: #ff4b6e;
+      background-color: #d90429;
       color: white;
-      border: none;
-      padding: 12px 24px;
-      font-size: 16px;
+      border: 3px solid #000;
+      padding: 12px 28px;
+      font-size: 18px;
       font-weight: bold;
-      border-radius: 25px;
+      border-radius: 30px;
       cursor: pointer;
-      transition: transform 0.2s, background-color 0.2s;
-      margin-top: 15px;
+      box-shadow: 4px 4px 0px #000;
+      transition: transform 0.1s, box-shadow 0.1s;
     }
 
     .open-btn:hover {
-      background-color: #e03a5b;
-      transform: scale(1.05);
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #000;
     }
 
-    /* Hidden content container */
-    #secret-content {
-      display: none; /* Keeps it hidden until clicked */
+    .open-btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px #000;
+    }
+
+    /* Envelope & Letter Wrapper */
+    .envelope-wrapper {
+      display: none; /* Hidden until button click */
       margin-top: 20px;
-      animation: fadeIn 1s ease-in-out;
+      perspective: 1000px;
     }
 
-    .message {
-      color: #555;
-      line-height: 1.6;
+    /* Envelope Styling */
+    .envelope {
+      background: #fff;
+      border: 3px solid #000;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 6px 6px 0px rgba(0,0,0,0.15);
+      position: relative;
+      animation: openLetter 0.8s ease-out forwards;
+    }
+
+    /* Envelope Flap Accent */
+    .envelope::before {
+      content: '🐾';
+      font-size: 24px;
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fcf6bd;
+      padding: 0 5px;
+    }
+
+    /* The Letter Content */
+    .letter {
+      text-align: left;
+      color: #2b2d42;
+      line-height: 1.7;
       font-size: 15px;
+      background: #fffdf0;
+      padding: 20px;
+      border: 2px dashed #d90429;
+      border-radius: 8px;
     }
 
-    /* Styling the photos */
+    .letter p {
+      margin-bottom: 12px;
+    }
+
+    /* Photo Gallery inside the envelope */
     .photo-gallery {
       display: flex;
       flex-direction: column;
@@ -75,52 +114,30 @@
 
     .photo-gallery img {
       width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      border: 2px solid #000;
     }
 
-    /* Smooth fade-in effect when revealed */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* Opening Animation */
+    @keyframes openLetter {
+      0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="card">
-    <h1>Happy Anniversary! ❤️</h1>
-    <p>I made something small for you...</p>
-    
-    <button class="open-btn" onclick="revealSurprise()">Click to Open 💌</button>
-
-    <div id="secret-content">
-      <div class="message">
-        <p><strong>Dearest [Name],</strong></p>
-        <p>Write your heart out here! Thank him for the memories, mention an inside joke, or write about your favorite moments together over the past year.</p>
-      </div>
-
-      <div class="photo-gallery">
-        <img src="https://via.placeholder.com/400x300" alt="Our Memory 1">
-        <img src="https://via.placeholder.com/400x300" alt="Our Memory 2">
-      </div>
+  <div class="container">
+    <div class="snoopy-header">
+      <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Snoopy_Peanuts.png" alt="Snoopy">
     </div>
-  </div>
 
-  <script>
-    function revealSurprise() {
-      // Find the hidden content div
-      const content = document.getElementById('secret-content');
-      // Find the button
-      const button = document.querySelector('.open-btn');
+    <h1>Happy Anniversary! ❤️</h1>
 
-      // Reveal the hidden content
-      content.style.display = 'block';
-      
-      // Hide the button after clicking
-      button.style.display = 'none';
-    }
-  </script>
-
-</body>
-</html>
+    <button class="open-btn" onclick="openEnvelope()">click for message 💌</button>
